@@ -21,11 +21,11 @@ public class Message {
     @NotNull
     String sentby;
 
-    //Date posteddate =  new Date();
-
     String posteddate;
 
     public Message() {
+        Date date = new Date();
+        posteddate = date.toString();
     }
 
     public long getId() {
@@ -52,11 +52,11 @@ public class Message {
         this.sentby = sentby;
     }
 
-    public Date getPosteddate() {
+    public String getPosteddate() {
         return posteddate;
     }
 
-    public void setPosteddate(Date posteddate) {
+    public void setPosteddate(String posteddate) {
         this.posteddate = posteddate;
     }
 }
