@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -25,7 +26,9 @@ public class Message {
 
     public Message() {
         Date date = new Date();
-        posteddate = date.toString();
+        SimpleDateFormat ft =
+                new SimpleDateFormat("E MM/dd/yyyy hh:mm:ss a zzz");
+        posteddate = ft.format(date);
     }
 
     public long getId() {
